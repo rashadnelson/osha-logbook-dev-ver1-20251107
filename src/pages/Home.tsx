@@ -137,8 +137,7 @@ const Home = () => {
                   "Form 300, 301, and 300A support",
                   "Secure data storage",
                   "Email support",
-                  "Automatic updates",
-                  "30-day money-back guarantee"
+                  "Automatic updates"
                 ].map((feature, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <Check className="h-5 w-5 text-primary shrink-0 mt-0.5" />
@@ -159,17 +158,6 @@ const Home = () => {
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Frequently Asked Questions</h2>
           <div className="space-y-6">
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">What's your refund policy?</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  Purchase includes a 30-day money-back guarantee. If you're not satisfied, we'll refund your payment, no questions asked.
-                </p>
-              </CardContent>
-            </Card>
-
             <Card>
               <CardHeader>
                 <CardTitle className="text-lg">Is my data secure?</CardTitle>
