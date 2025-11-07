@@ -21,17 +21,13 @@ const Home = () => {
           Professional incident logging and reporting for safety officers. Stay compliant, save time, and keep your workplace safe with our comprehensive OSHA logbook solution.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
-          <Button size="lg" className="text-lg h-14 px-8 gap-2" onClick={handleCheckout}>
-            <Sparkles className="h-5 w-5" />
-            Start Your Free Trial
+          <Button size="lg" className="text-lg h-14 px-8" onClick={handleCheckout}>
+            Buy Now
           </Button>
           <Button size="lg" variant="outline" className="text-lg h-14 px-8" asChild>
             <a href="#features">Learn More</a>
           </Button>
         </div>
-        <p className="text-sm text-muted-foreground pt-2">
-          14-day free trial • No credit card required • Cancel anytime
-        </p>
       </section>
 
       {/* Features Section */}
@@ -142,7 +138,7 @@ const Home = () => {
                   "Secure data storage",
                   "Email support",
                   "Automatic updates",
-                  "14-day money-back guarantee"
+                  "30-day money-back guarantee"
                 ].map((feature, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <Check className="h-5 w-5 text-primary shrink-0 mt-0.5" />
@@ -151,11 +147,8 @@ const Home = () => {
                 ))}
               </ul>
               <Button size="lg" className="w-full text-lg h-14" onClick={handleCheckout}>
-                Start Your Free Trial
+                Buy Now
               </Button>
-              <p className="text-center text-sm text-muted-foreground">
-                Cancel anytime, no questions asked
-              </p>
             </CardContent>
           </Card>
         </div>
@@ -168,11 +161,11 @@ const Home = () => {
           <div className="space-y-6">
             <Card>
               <CardHeader>
-                <CardTitle className="text-lg">How does the free trial work?</CardTitle>
+                <CardTitle className="text-lg">What's your refund policy?</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Start your 14-day free trial with no credit card required. Explore all features risk-free. If you love it, upgrade to continue using the platform.
+                  Purchase includes a 30-day money-back guarantee. If you're not satisfied, we'll refund your payment, no questions asked.
                 </p>
               </CardContent>
             </Card>
@@ -221,7 +214,7 @@ const Home = () => {
             Join safety officers who trust OSHA Logbook for their incident tracking and reporting needs.
           </p>
           <Button size="lg" className="text-lg h-14 px-8" onClick={handleCheckout}>
-            Start Your Free Trial Today
+            Buy Now
           </Button>
         </div>
       </section>
