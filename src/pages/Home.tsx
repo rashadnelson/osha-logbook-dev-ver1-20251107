@@ -121,7 +121,7 @@ const Home = () => {
             <CardHeader className="text-center pb-8 pt-12">
               <CardTitle className="text-2xl mb-2">Annual Subscription</CardTitle>
               <div className="space-y-2">
-                <div className="flex items-baseline justify-center gap-2">
+                <div className="flex items-baseline justify-center">
                   <span className="text-5xl font-bold">$99</span>
                   <span className="text-muted-foreground">/year</span>
                 </div>
