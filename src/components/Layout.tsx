@@ -8,9 +8,10 @@ interface LayoutProps {
 
 export const Layout = ({ children }: LayoutProps) => {
   const location = useLocation();
+  const isSalesPage = location.pathname === "/";
 
   const navItems = [
-    { path: "/", label: "Home", icon: LayoutDashboard },
+    { path: "/dashboard", label: "Home", icon: LayoutDashboard },
     { path: "/incidents/new", label: "New Incident", icon: Plus },
     { path: "/dashboard", label: "Dashboard", icon: FileText },
     { path: "/export", label: "Export", icon: Download },
@@ -27,27 +28,29 @@ export const Layout = ({ children }: LayoutProps) => {
               </div>
               <h1 className="text-xl font-semibold tracking-tight">OSHA Logbook</h1>
             </Link>
-            <nav className="flex items-center gap-1">
-              {navItems.map((item) => {
-                const Icon = item.icon;
-                const isActive = location.pathname === item.path;
-                return (
-                  <Link
-                    key={item.path}
-                    to={item.path}
-                    className={cn(
-                      "flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-smooth",
-                      isActive
-                        ? "bg-primary text-primary-foreground"
-                        : "text-muted-foreground hover:bg-secondary hover:text-foreground"
-                    )}
-                  >
-                    <Icon className="h-4 w-4" />
-                    <span className="hidden sm:inline">{item.label}</span>
-                  </Link>
-                );
-              })}
-            </nav>
+            {!isSalesPage && (
+              <nav className="flex items-center gap-1">
+                {navItems.map((item) => {
+                  const Icon = item.icon;
+                  const isActive = location.pathname === item.path;
+                  return (
+                    <Link
+                      key={item.path}
+                      to={item.path}
+                      className={cn(
+                        "flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-smooth",
+                        isActive
+                          ? "bg-primary text-primary-foreground"
+                          : "text-muted-foreground hover:bg-secondary hover:text-foreground"
+                      )}
+                    >
+                      <Icon className="h-4 w-4" />
+                      <span className="hidden sm:inline">{item.label}</span>
+                    </Link>
+                  );
+                })}
+              </nav>
+            )}
           </div>
         </div>
       </header>
