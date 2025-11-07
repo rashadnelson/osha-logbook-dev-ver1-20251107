@@ -134,7 +134,7 @@ const Home = () => {
                   "Unlimited incident logging",
                   "Real-time dashboard & analytics",
                   "OSHA-compliant CSV exports",
-                  "Form 300, 301, and 300A support",
+                  "Form 300, 301, and 300A compliant",
                   "Secure data storage",
                   "Email support",
                   "Automatic updates"
