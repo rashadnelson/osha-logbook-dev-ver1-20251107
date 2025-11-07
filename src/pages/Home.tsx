@@ -1,117 +1,230 @@
-import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { FileText, Plus, BarChart3, Download, ShieldCheck } from "lucide-react";
+import { Check, ShieldCheck, FileText, BarChart3, Download, Clock, Lock, Sparkles } from "lucide-react";
 
 const Home = () => {
+  const handleCheckout = () => {
+    window.open('https://buy.stripe.com/test_8x2fZi3K99ej6Bz8Ye3Je00', '_blank');
+  };
+
   return (
-    <div className="mx-auto max-w-4xl space-y-8">
-      <div className="text-center space-y-4 pt-8">
-        <div className="inline-flex h-16 w-16 items-center justify-center rounded-lg bg-primary/10">
-          <ShieldCheck className="h-8 w-8 text-primary" />
+    <div className="mx-auto max-w-7xl">
+      {/* Hero Section */}
+      <section className="text-center space-y-6 pt-16 pb-20 px-4">
+        <div className="inline-flex h-20 w-20 items-center justify-center rounded-2xl bg-primary/10 mb-4">
+          <ShieldCheck className="h-10 w-10 text-primary" />
         </div>
-        <h1 className="text-4xl font-semibold tracking-tight">OSHA Logbook</h1>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          Compliance-focused incident logging for safety officers. Track, manage, and export OSHA-compliant incident reports with confidence.
+        <h1 className="text-5xl md:text-6xl font-bold tracking-tight">
+          OSHA Compliance Made Simple
+        </h1>
+        <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          Professional incident logging and reporting for safety officers. Stay compliant, save time, and keep your workplace safe with our comprehensive OSHA logbook solution.
         </p>
-      </div>
-
-      <div className="flex justify-center pt-4">
-        <Link to="/incidents/new">
-          <Button size="lg" className="gap-2">
-            <Plus className="h-5 w-5" />
-            Create New Incident
+        <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
+          <Button size="lg" className="text-lg h-14 px-8 gap-2" onClick={handleCheckout}>
+            <Sparkles className="h-5 w-5" />
+            Start Your Free Trial
           </Button>
-        </Link>
-      </div>
+          <Button size="lg" variant="outline" className="text-lg h-14 px-8" asChild>
+            <a href="#features">Learn More</a>
+          </Button>
+        </div>
+        <p className="text-sm text-muted-foreground pt-2">
+          14-day free trial • No credit card required • Cancel anytime
+        </p>
+      </section>
 
-      <div className="grid gap-6 md:grid-cols-3 pt-8">
-        <Card className="transition-smooth hover:shadow-md">
-          <CardHeader>
-            <FileText className="h-8 w-8 text-primary mb-2" />
-            <CardTitle>Log Incidents</CardTitle>
-            <CardDescription>
-              Enter OSHA Form 300/301 data with structured validation and inline guidance
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <Link to="/incidents/new">
-              <Button variant="outline" className="w-full">Get Started</Button>
-            </Link>
-          </CardContent>
-        </Card>
-
-        <Card className="transition-smooth hover:shadow-md">
-          <CardHeader>
-            <BarChart3 className="h-8 w-8 text-primary mb-2" />
-            <CardTitle>View Dashboard</CardTitle>
-            <CardDescription>
-              Track total incidents, lost workdays, and injury classifications
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <Link to="/dashboard">
-              <Button variant="outline" className="w-full">Open Dashboard</Button>
-            </Link>
-          </CardContent>
-        </Card>
-
-        <Card className="transition-smooth hover:shadow-md">
-          <CardHeader>
-            <Download className="h-8 w-8 text-primary mb-2" />
-            <CardTitle>Export Reports</CardTitle>
-            <CardDescription>
-              Generate OSHA-compliant CSVs that match official submission formats
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <Link to="/export">
-              <Button variant="outline" className="w-full">Export Data</Button>
-            </Link>
-          </CardContent>
-        </Card>
-      </div>
-
-      <Card className="bg-muted/50">
-        <CardHeader>
-          <CardTitle className="text-lg">OSHA Form References</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-2 text-sm">
-          <div className="flex items-center justify-between p-3 bg-card rounded-md">
-            <span className="font-medium">Form 300 - Log of Work-Related Injuries and Illnesses</span>
-            <a 
-              href="https://www.osha.gov/recordkeeping/forms" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-primary hover:underline"
-            >
-              View Guide
-            </a>
+      {/* Features Section */}
+      <section id="features" className="py-20 px-4 bg-muted/30">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center space-y-4 mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold">Everything You Need for OSHA Compliance</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Built specifically for safety officers who need reliable, accurate incident tracking
+            </p>
           </div>
-          <div className="flex items-center justify-between p-3 bg-card rounded-md">
-            <span className="font-medium">Form 301 - Injury and Illness Incident Report</span>
-            <a 
-              href="https://www.osha.gov/recordkeeping/forms" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-primary hover:underline"
-            >
-              View Guide
-            </a>
+          
+          <div className="grid gap-8 md:grid-cols-3">
+            <Card>
+              <CardHeader>
+                <FileText className="h-12 w-12 text-primary mb-4" />
+                <CardTitle className="text-xl">Smart Incident Logging</CardTitle>
+                <CardDescription className="text-base">
+                  Enter OSHA Form 300/301 data with structured validation, inline guidance, and auto-complete features that prevent errors
+                </CardDescription>
+              </CardHeader>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <BarChart3 className="h-12 w-12 text-primary mb-4" />
+                <CardTitle className="text-xl">Real-Time Dashboard</CardTitle>
+                <CardDescription className="text-base">
+                  Track total incidents, lost workdays, and injury classifications with visual analytics and trend reports
+                </CardDescription>
+              </CardHeader>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <Download className="h-12 w-12 text-primary mb-4" />
+                <CardTitle className="text-xl">Compliant Exports</CardTitle>
+                <CardDescription className="text-base">
+                  Generate OSHA-compliant CSV reports that match official submission formats perfectly
+                </CardDescription>
+              </CardHeader>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <Clock className="h-12 w-12 text-primary mb-4" />
+                <CardTitle className="text-xl">Save Time</CardTitle>
+                <CardDescription className="text-base">
+                  Reduce incident logging time by up to 70% with smart forms and automated data validation
+                </CardDescription>
+              </CardHeader>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <Lock className="h-12 w-12 text-primary mb-4" />
+                <CardTitle className="text-xl">Secure & Private</CardTitle>
+                <CardDescription className="text-base">
+                  Your data is encrypted and stored securely. We never share your information with third parties
+                </CardDescription>
+              </CardHeader>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <ShieldCheck className="h-12 w-12 text-primary mb-4" />
+                <CardTitle className="text-xl">Always Up-to-Date</CardTitle>
+                <CardDescription className="text-base">
+                  Stay current with the latest OSHA regulations and form requirements automatically
+                </CardDescription>
+              </CardHeader>
+            </Card>
           </div>
-          <div className="flex items-center justify-between p-3 bg-card rounded-md">
-            <span className="font-medium">Form 300A - Summary of Work-Related Injuries and Illnesses</span>
-            <a 
-              href="https://www.osha.gov/recordkeeping/forms" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-primary hover:underline"
-            >
-              View Guide
-            </a>
+        </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section className="py-20 px-4">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center space-y-4 mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold">Simple, Transparent Pricing</h2>
+            <p className="text-lg text-muted-foreground">
+              Everything you need to stay OSHA compliant
+            </p>
           </div>
-        </CardContent>
-      </Card>
+
+          <Card className="border-2 border-primary relative overflow-hidden">
+            <div className="absolute top-0 right-0 bg-primary text-primary-foreground px-4 py-1 text-sm font-medium">
+              BEST VALUE
+            </div>
+            <CardHeader className="text-center pb-8 pt-12">
+              <CardTitle className="text-2xl mb-2">Annual Subscription</CardTitle>
+              <div className="space-y-2">
+                <div className="flex items-baseline justify-center gap-2">
+                  <span className="text-5xl font-bold">$99</span>
+                  <span className="text-muted-foreground">/year</span>
+                </div>
+                <p className="text-sm text-muted-foreground">That's only $8.25/month</p>
+              </div>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <ul className="space-y-3">
+                {[
+                  "Unlimited incident logging",
+                  "Real-time dashboard & analytics",
+                  "OSHA-compliant CSV exports",
+                  "Form 300, 301, and 300A support",
+                  "Secure data storage",
+                  "Email support",
+                  "Automatic updates",
+                  "14-day money-back guarantee"
+                ].map((feature, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <Check className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                    <span className="text-base">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+              <Button size="lg" className="w-full text-lg h-14" onClick={handleCheckout}>
+                Start Your Free Trial
+              </Button>
+              <p className="text-center text-sm text-muted-foreground">
+                Cancel anytime, no questions asked
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 px-4 bg-muted/30">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+          <div className="space-y-6">
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">How does the free trial work?</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  Start your 14-day free trial with no credit card required. Explore all features risk-free. If you love it, upgrade to continue using the platform.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">Is my data secure?</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  Absolutely. We use industry-standard encryption and security practices. Your incident data is stored securely and never shared with third parties.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">Can I export my data?</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  Yes! Export your data anytime in OSHA-compliant CSV format. Your data is always yours to keep.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">What if I need help?</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  Our support team is here to help via email. We typically respond within 24 hours on business days.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="py-20 px-4">
+        <div className="max-w-4xl mx-auto text-center space-y-6">
+          <h2 className="text-3xl md:text-4xl font-bold">Ready to Simplify Your OSHA Compliance?</h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Join safety officers who trust OSHA Logbook for their incident tracking and reporting needs.
+          </p>
+          <Button size="lg" className="text-lg h-14 px-8" onClick={handleCheckout}>
+            Start Your Free Trial Today
+          </Button>
+        </div>
+      </section>
     </div>
   );
 };
