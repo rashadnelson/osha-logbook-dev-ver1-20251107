@@ -179,17 +179,6 @@ const Home = () => {
                 </p>
               </CardContent>
             </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">What if I need help?</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  Our support team is here to help via email. We typically respond within 24 hours on business days.
-                </p>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </section>
