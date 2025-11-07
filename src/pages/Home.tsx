@@ -136,7 +136,6 @@ const Home = () => {
                   "OSHA-compliant CSV exports",
                   "Form 300, 301, and 300A compliant",
                   "Secure data storage",
-                  "Email support",
                   "Automatic updates"
                 ].map((feature, i) => (
                   <li key={i} className="flex items-start gap-3">
